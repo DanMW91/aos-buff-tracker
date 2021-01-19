@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Fraunces:wght@100&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="image"><img class="image-head" src="age of sigmar.png"></div>
+    <div class="phases phaseWindow">
+      
+      <span class="phase hero phaseWindow">Hero Phase</span>
+      <span class="phase movement phaseWindow">Movement Phase</span>
+      <span class="phase shooting phaseWindow">Shooting Phase</span>
+      <span class="phase charge phaseWindow">Charge Phase</span>
+      <span class="phase combat phaseWindow">Combat Phase</span>
+      <span class="phase battleshock phaseWindow">BattleShock Phase</span>
+    </div>
+    
+    <p>
+    <div class="nextButton">
+      
+      <button class="btnNextPhase">Next Phase</button>
+      <div class="horse-holder">
+      <img class="skullhorse" src="skullhorse.png">
+      </div>
+    </div>
+    </p>
+    <div class="formHolder">
+        
+        <form class="inputForm">
+        <span><lable for="name">Name</lable><input type="text" name="name" class="unitInput unitNameInput" required></span>
+        <span><lable for="save">Save</lable><input type="number" name="save" class="unitInput unitSaveInput" required></span>
+        <span class="bravery-span"><lable for="bravery">Bravery</lable><input type="number" name="bravery" class="unitInput unitBraveryInput" required></span>
+        <div><button class="btnAddUnit">Add Unit</button></div>
+        <p>
+    </form>
+    <div class="stat-table">
+        <table class="unitStatsTable">
+          <tbody class="tbody">
+            <tr class="row">
+            <th class="heading">Name</th>
+            <th class="heading">Save</th>
+            <th class="heading">Bravery</th>
+            <th class="heading">Active Buffs (end)</th>
+            
+            <th class="heading btnAddBuff"><button class="buttonAddBuff">Add Buff</button></th></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </p>
+    
+    </div>
+    
+    <div class="buffModal hidden transitionHide">
+    <form>
+        <div class="buffLabel">Unit</div>
+    <div class="buffModalRadio modalRadios">
+        
+    </div>
+    <div>
+        <div class="buffLabel">Buff</div>
+        <div class="modalRadios">
+        <label for="save">Save</label>
+        <input type="radio" name="buffChoice" class="save buffChoice" value="save">
+        <label for="bravery">Bravery</label>
+        <input type="radio" name="buffChoice" class="bravery buffChoice" value="bravery">
+        <label for="custom">Custom</label>
+        <input type="radio" name="buffChoice" class="custom buffChoice" value="custom">
+        <input type="text" class="customBuffChoice">
+        </div>
+    </div>
+    <div>
+        <div class="buffLabel">End Phase</div>
+        <div class="modalRadios">
+        <label for="hero">Hero</label>
+        <input type="radio" name="endPhase" class="hero endPhase" value="hero">
+        <label for="movement">Movement</label>
+        <input type="radio" name="endPhase" class="movement endPhase" value="movement">
+        <label for="shooting">Shooting</label>
+        <input type="radio" name="endPhase" class="shooting endPhase" value="shooting">
+        <label for="charge">Charge</label>
+        <input type="radio" name="endPhase" class="charge endPhase" value="charge">
+        <label for="combat">Combat</label>
+        <input type="radio" name="endPhase" class="combat endPhase" value="combat">
+        <label for="battleshock">Battleshock</label>
+        <input type="radio" name="endPhase" class="battleshock endPhase" value="battleshock">
+        </div>
+    </div>
+    <button class="btnSubmitBuff">Confirm</button>
+    </form>  
+    <button class="btnCloseModal">Close</button>
+    </div>
+    <div class="overlay hidden transitionHide"></div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,352 @@
+html {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  margin: auto;
+  position: fixed;
+  width: 100vw;
+  align-items: center;
+  font-family: "Cinzel", serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  color: #0b1521;
+  background: linear-gradient(to top left, #364a59, #677e8d) fixed;
+  height: 100vh;
+  /* padding: 2rem; */
+}
+
+.image {
+  margin: auto;
+  margin-top: 1%;
+  text-align: center;
+  width: 80vw;
+}
+.image-head {
+  margin: auto;
+  width: 90%;
+}
+.skullhorse {
+  position: absolute;
+  z-index: -1;
+  opacity: 50%;
+  overflow: hidden;
+  height: 60vw;
+}
+
+.row:nth-of-type(odd) {
+  background-color: #dac5a0b4;
+}
+.row:nth-of-type(even) {
+  background-color: #bc8f36a2;
+}
+
+.phases {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  margin-top: 5%;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.phase {
+  flex-grow: 1;
+  margin-top: 5px;
+  margin-left: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12%;
+  height: 40px;
+  background: linear-gradient(to top left, #bc9036, #ecdcbe);
+  font-size: 1.6vw;
+  text-align: center;
+  padding: 1.5vw;
+  border: 2px solid;
+  border-radius: 10px 0px 10px 0px;
+}
+
+.inputForm {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 45px;
+  text-align: center;
+  font-weight: bold;
+}
+.activephase {
+  background: linear-gradient(to top left, #861616, #f02a1c);
+  transform: translateY(-0.4em);
+  font-weight: bold;
+  box-shadow: 0 0.5em 0.5em -0.1em #f02a1c;
+  transition: box-shadow 0.5s;
+  transition: transform 0.5s;
+}
+.nextButton {
+  margin: auto;
+  margin-top: 30px;
+  width: 100px;
+  font-size: 16px;
+  margin: 10 px;
+  text-align: center;
+}
+
+.endPhase,
+.buffChoice {
+  margin-right: 5%;
+}
+.btnNextPhase {
+  font-family: "Cinzel", serif;
+  margin: auto;
+  width: 100px;
+  font-size: 16px;
+  padding: 15px;
+  text-align: center;
+  background-color: #1cbacc;
+  font-weight: bold;
+  border: 2px solid;
+  border-radius: 10px;
+  background: linear-gradient(to top left, #168c73, #24dab2);
+  box-shadow: 2, 2, #353535;
+}
+.btnNextPhase:active {
+  color: aquamarine;
+  box-shadow: inset;
+}
+.btnNextPhase:hover {
+  cursor: pointer;
+  background: #19a6b6;
+}
+.btnNextPhase:focus {
+  outline: 0;
+}
+.unitInput {
+  width: 70px;
+}
+.btnAddUnit {
+  font-family: "Cinzel", serif;
+  margin: auto;
+  margin-top: 20px;
+  width: 80px;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  text-align: center;
+  background: linear-gradient(to top left, #861616, #f02a1c);
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 10px;
+  color: (53, 53, 53);
+}
+.btnAddUnit:active {
+  color: aquamarine;
+  box-shadow: inset;
+}
+.btnAddUnit:hover {
+  cursor: pointer;
+  background: #19a6b6;
+}
+.btnAddUnit:focus {
+  outline: 0;
+}
+.buttonAddBuff {
+  font-family: "Cinzel", serif;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 80px;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  text-align: center;
+  background: linear-gradient(to top left, #861616, #f02a1c);
+  font-weight: bold;
+  border: 1px solid;
+  border-radius: 10px;
+  color: (53, 53, 53);
+}
+.buttonAddBuff:active {
+  color: #f59e9e;
+  box-shadow: inset;
+}
+.buttonAddBuff:hover {
+  cursor: pointer;
+  background: #19a6b6;
+}
+
+.buttonAddBuff:focus {
+  outline: 0;
+}
+.stat-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.unitStatsTable {
+  position: absolute;
+  table-layout: auto;
+  margin: auto;
+  z-index: 4;
+  text-align: center;
+  width: 65%;
+  border-bottom: 2px solid;
+  border-top: 2px solid;
+}
+
+.cell {
+  border-top: 2px solid;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.buffModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  text-align: center;
+  background: linear-gradient(to top left, #bc9036, #ecdcbe);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.customBuffChoice {
+  display: none;
+}
+.custom:checked ~ .customBuffChoice {
+  display: inline-block;
+}
+
+.buffLabel {
+  font-weight: bold;
+  margin: auto;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  text-decoration: underline;
+}
+.modalRadios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btnSubmitBuff {
+  font-family: "Cinzel", serif;
+  margin: auto;
+  margin-top: 20px;
+  width: 80px;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  text-align: center;
+  background: linear-gradient(to top left, #168c73, #24dab2);
+  font-weight: bold;
+  border-radius: 10px;
+  color: (53, 53, 53);
+}
+.btnSubmitBuff:hover {
+  cursor: pointer;
+  background-color: #19a6b6;
+}
+.btnSubmitBuff:active {
+  color: aquamarine;
+  box-shadow: inset;
+}
+.btnSubmitBuff:focus {
+  outline: 0;
+}
+
+.btnCloseModal {
+  font-family: "Cinzel", serif;
+  margin: auto;
+  margin-top: 50px;
+  width: 80px;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(to top left, #861616, #f02a1c);
+
+  border-radius: 10px;
+  color: (53, 53, 53);
+}
+.btnCloseModal:hover {
+  cursor: pointer;
+  background-color: #d65151;
+}
+.btnCloseModal:active {
+  color: #f59e9e;
+  box-shadow: inset;
+}
+.btnCloseModal:focus {
+  outline: 0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .bravery-span {
+    display: block;
+  }
+  .image {
+    margin: auto;
+    margin-top: 5%;
+  }
+  .stat-table {
+    margin: auto;
+  }
+
+  .tbody {
+    font-size: 80%;
+  }
+
+  .body {
+    height: 100%;
+    width: 100%;
+  }
+  .phases {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 20%;
+  }
+  .phase {
+    display: flex;
+    font-size: 50%;
+    flex-basis: 25%;
+    height: 20%;
+    flex-grow: 0;
+    margin-left: 1px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skullhorse {
+    height: 100vw;
+    margin: top 80vw;
+    overflow: hidden;
+  }
+  .horse-holder {
+    overflow: hidden;
+  }
+  .activephase {
+    transform: translateY(-0.6em);
+  }
+}
